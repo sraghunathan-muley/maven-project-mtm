@@ -36,7 +36,7 @@ http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" doc:name="HTTP" />
         <set-payload value="#['Hello Maven']" doc:name="Set Payload" />
     </flow>
-    
+      
     <flow name="maven-test-projectFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/flights" doc:name="HTTP" />
         <db:select config-ref="Derby_Configuration" doc:name="Database">
@@ -51,4 +51,5 @@ http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
         <logger message="#[payload]" level="INFO" doc:name="Logger" />
         <set-payload value="#[payload]" doc:name="Set Payload" />
     </flow>
+    
 </mule>
